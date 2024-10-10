@@ -5,10 +5,14 @@ const range1 = document.getElementById('range1'),
 
 const minGap = 100; // Minimum difference between range1 and range2 values
 
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 const setValue = (range, rangeV) => {
   const newValue = Number((range.value - range.min) * 100 / (range.max - range.min)),
         newPosition = 10 - (newValue * 0.2);
-  rangeV.innerHTML = `₦ ${range.value}`;
+  rangeV.innerHTML = `₦ ${numberWithCommas(range.value)}`;
   rangeV.style.left = `calc(${newValue}% + (${newPosition}px))`;
 };
 
