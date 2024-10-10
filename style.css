@@ -1,0 +1,45 @@
+.range-wrap {
+  max-width: 400px;
+  position: relative;
+}
+.range-wrap input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  height: 4px;
+  background: transparent;
+  pointer-events: none; /* Prevents interaction with the track itself */
+}
+.range-wrap input[type=range]::-webkit-slider-runnable-track {
+  height: 4px;
+  cursor: pointer;
+  background: #0d6efd;
+  border-radius: 25px;
+  pointer-events: auto; /* Enables interaction with the thumbs */
+}
+.range-wrap input[type=range]::-webkit-slider-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 1);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -8px;
+  pointer-events: auto; /* Enables interaction with the thumbs */
+  position: relative;
+  z-index: 3; /* Ensures thumbs are on top of the track */
+}
+.range-value {
+  position: absolute;
+  top: 25px; /* Move the value display below the thumb */
+  color: #fff;
+  background-color: #0d6efd;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  z-index: 4; /* Ensures labels are above thumbs */
+}
